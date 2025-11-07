@@ -1,0 +1,21 @@
+The Wine Quality dataset is a dataset that contains wine chemical properties with each column containing qualities of the wines and how they correlate with the final quality target of the wine.
+
+Project Approach
+I conducted an Exploratory Data Analysis (EDA) on a  white Wine quality dataset. The objective is to understand data and explore the data indepth by checking for missing values and duplication in the dataset.
+The following were the premiliminary cleaning and insight discovered from the Wine dataset
+1. The dataset has 4898 rows and 12 columns
+2. The data was clean as there were no missing values in the dataset
+3. The initial data type of the data were all "float 64", apart from the wine quality that was int64.
+4. There were about 937 duplicate rows in the data
+
+There was not much cleaning to do on the data as it was very clean therefore the duplicate values which amount to about 937 were dropped which was the only cleaning done on the dataset.
+
+A univariate analysis was perfomed on the wine properties column where the numerical features of the columns were identified, the correlation of the features column with the data was checked with the target (quality). The quality column was mapped to Best, Good, Average, Bad and poor then splitted the dataset was splitted and MinMax scaler was applied. A Base model was built using Decison Treee and other multiple 3 models were trained and the were compared. The model that performed bast was selected based on balance of the metrics and was optimized using RandomSearch and the model was retrained using optimal parameters found. the model was reevaluated using same classification metrics used before tuning
+
+2. Indicate what your metric indicate about thether the model is more precise for "Good" Wines or "Bad" Wines
+
+After the hyperparameter tuning, the SVM model maintained an overall accuracy of  **69%**, which is roughly the same as before optimization. But, looking deeper into the precision, recall, and F1-scores, the results show that while the model performs quite well for the *Good* class (with high recall and F1-score), its performance on the *Bad* and *Best* classes remains poor. This suggests that the optimization didn’t significantly improve the model’s ability to generalize across all categories. This reinforced what the model was already good at.
+The tuning helped stabilize performance but didn’t lead to a meaningful boost in accuracy or class balance.
+
+
+
